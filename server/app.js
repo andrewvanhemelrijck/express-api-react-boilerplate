@@ -13,6 +13,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+// get rid of 'x-powered-by Express' in response headers
+app.disable('x-powered-by');
+
 // set up routes
 app.use('/api', index);
 
