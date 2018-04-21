@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon ./bin/dev"
+    "start": "nodemon ./server/bin/dev",
+    "clean": "rm -rf server/dist",
+    "build": "npm run clean && mkdir server/dist && babel server -s -d server/dist",
+    "production": "npm run build && nodemon server/bin/production"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
