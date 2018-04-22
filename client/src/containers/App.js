@@ -1,5 +1,33 @@
-import React from 'react';
+import React, { Component } from 'react';
 
-const App = () => (<h1>React is working!</h1>);
+class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      res: "no response"
+    };
+  }
+
+  componentDidMount() {
+    fetch('api')
+      .then((res) => {
+        if (res.ok) return res.json();
+        console.error('There was an error fetching data: /api')
+      })
+      .then((res) => {
+        this.setState({ res: res })
+      })
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>React is working!</h1>
+        <h2>Response: { this.state.res.title }</h2>
+      </div>
+    );
+  }
+}
 
 export default App;
