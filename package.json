@@ -3,21 +3,24 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "test": "jest",
     "start": "nodemon ./server/bin/dev",
     "clean": "rm -rf server/dist",
-    "build": "npm run clean && mkdir server/dist && babel server -s -d server/dist",
+    "build": "npm run clean && mkdir server/dist && babel server/src -s -d server/dist",
     "production": "npm run build && nodemon server/bin/production"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "babel-register": "^6.26.0",
     "body-parser": "~1.17.1",
     "debug": "~2.6.3",
     "express": "~4.15.2",
-    "jade": "~1.11.0",
     "morgan": "~1.8.1",
-    "nodemon": "^1.17.3",
-    "serve-favicon": "~2.4.2"
+    "nodemon": "^1.17.3"
+  },
+  "devDependencies": {
+    "babel-register": "^6.26.0",
+    "jest": "^22.4.3",
+    "supertest": "^3.0.0"
   }
 }
