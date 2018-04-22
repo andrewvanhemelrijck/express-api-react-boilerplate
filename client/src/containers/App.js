@@ -13,10 +13,10 @@ class App extends Component {
     fetch('api')
       .then((res) => {
         if (res.ok) return res.json();
-        console.error('There was an error fetching data: /api')
+        console.error('There was an error fetching data: /api');
       })
       .then((res) => {
-        this.setState({ res: res })
+        this.setState({ res: res });
       })
   }
 
