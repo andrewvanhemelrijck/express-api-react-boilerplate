@@ -3,3 +3,4 @@ node_modules
 
 # Production Folders
 server/dist
+client/dist

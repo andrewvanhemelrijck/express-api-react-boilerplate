@@ -5,7 +5,7 @@
   "scripts": {
     "test": "jest",
     "webpack": "webpack --config client/webpack.config.js --watch",
-    "start": "nodemon ./server/bin/dev && npm run webpack",
+    "start": "nodemon ./server/bin/dev & npm run webpack",
     "clean": "rm -rf server/dist",
     "build": "npm run clean && mkdir server/dist && babel server/src -s -d server/dist",
     "production": "npm run build && nodemon server/bin/production"
