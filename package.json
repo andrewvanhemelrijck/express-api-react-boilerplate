@@ -26,8 +26,17 @@
     "webpack-cli": "^2.0.15"
   },
   "devDependencies": {
+    "babel-preset-jest": "^22.4.3",
     "babel-register": "^6.26.0",
     "jest": "^22.4.3",
+    "jest-fetch-mock": "^1.5.0",
+    "react-test-renderer": "^16.3.2",
     "supertest": "^3.0.0"
+  },
+  "jest": {
+    "automock": false,
+    "setupFiles": [
+      "./setupJest.js"
+    ]
   }
 }

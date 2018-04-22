@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index App component renders correctly 1`] = `
+<div>
+  <h1>
+    React is running!
+  </h1>
+  <h2 />
+</div>
+`;
