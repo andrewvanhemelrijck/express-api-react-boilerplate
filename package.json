@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "test": "jest",
+    "test": "jest --verbose",
     "webpack": "webpack --config client/webpack.config.js --watch",
     "start": "nodemon ./server/bin/dev & npm run webpack",
     "clean": "rm -rf server/dist",
@@ -22,21 +22,25 @@
     "nodemon": "^1.17.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "webpack": "^3.8.1",
-    "webpack-cli": "^2.0.15"
+    "webpack": "^3.8.1"
   },
   "devDependencies": {
     "babel-preset-jest": "^22.4.3",
     "babel-register": "^6.26.0",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
     "jest": "^22.4.3",
     "jest-fetch-mock": "^1.5.0",
-    "react-test-renderer": "^16.3.2",
     "supertest": "^3.0.0"
   },
   "jest": {
     "automock": false,
     "setupFiles": [
       "./setupJest.js"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
     ]
   }
 }

@@ -1,10 +1,14 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Index App component renders correctly 1`] = `
-<div>
-  <h1>
-    React is running!
-  </h1>
-  <h2 />
-</div>
+exports[`Index shallow render 1`] = `
+<App>
+  <div>
+    <h1>
+      React is running!
+    </h1>
+    <h2>
+      Test title.
+    </h2>
+  </div>
+</App>
 `;

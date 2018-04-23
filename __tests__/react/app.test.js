@@ -1,12 +1,18 @@
 import React from 'react';
 import App from '../../client/src/containers/App';
-import renderer from 'react-test-renderer';
+import { shallow, mount } from 'enzyme';
 
 describe('Index', () => {
-  test('App component renders correctly', () => {
-    const tree = renderer
-      .create(<App />)
-      .toJSON();
-    expect(tree).toMatchSnapshot();
-  });
+  test('shallow render', async (done) => {
+    fetch.mockResponseOnce(JSON.stringify({ title: 'Test title.' }));
+
+    let wrapper = mount(<App />);
+
+    return setTimeout(() => {
+      wrapper.update();
+      expect(wrapper).toMatchSnapshot();
+      done();
+    }, 0);
+
+  })
 });
