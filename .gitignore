@@ -3,4 +3,4 @@ node_modules
 
 # Production Folders
 server/dist
-client/dist
+client/dist/js/react
